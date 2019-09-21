@@ -87,7 +87,8 @@ export default {
         sendTask(){    
             
             if(!this.check){
-            axios.post('http://localhost:4000/api/tasks',this.task)                  
+            axios.post('http://localhost:4000/api/tasks'
+          ,this.task)                  
             .then(data=>{
                 console.log(data.data);                
                 this.getTasks()})

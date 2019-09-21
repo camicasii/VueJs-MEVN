@@ -1,6 +1,8 @@
 const express =  require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+//const cors = require('./models/conrConf')
+const {cors} = require('./models/conrConf')
 
 
 
@@ -19,6 +21,8 @@ app.set('port', process.env.PORT||4000);
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.raw());
+app.use(cors);
+
 
 //Router
 app.use('/api/tasks',require('./routes/task'));
